@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lazizbek Sadullaev</title>
+<style>
+  :root {
+    --bg: #EDF1F5;
+    --bg-panel: #FFFFFF;
+    --ink: #1B2A4A;
+    --ink-soft: #4C5A75;
+    --line: #C9D2DE;
+    --gold: #C08A2E;
+    --teal: #3E7C6B;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', -apple-system, Segoe UI, sans-serif;
+    line-height: 1.55;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Lora', Georgia, 'Times New Roman', serif;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  a { color: var(--teal); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .wrap { max-width: 740px; margin: 0 auto; padding: 0 28px; }
+
+  header.hero {
+    background: var(--bg-panel);
+    border-bottom: 1px solid var(--line);
+    padding: 52px 0 30px;
+  }
+
+  .hero .kicker { font-size: 0.92rem; color: var(--teal); margin-bottom: 8px; }
+  .hero h1 { font-size: 2.3rem; line-height: 1.15; margin-bottom: 8px; }
+  .hero .role { font-size: 1rem; color: var(--ink-soft); margin-bottom: 16px; }
+
+  .hero .links a {
+    margin-right: 16px;
+    font-size: 0.92rem;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 2px;
+  }
+
+  nav.subnav {
+    background: var(--bg-panel);
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  nav.subnav .wrap { display: flex; gap: 20px; padding: 12px 28px; flex-wrap: wrap; }
+  nav.subnav a { color: var(--ink-soft); font-size: 0.88rem; }
+  nav.subnav a:hover { color: var(--teal); }
+
+  section { padding: 38px 0; border-bottom: 1px solid var(--line); }
+  section:last-of-type { border-bottom: none; }
+
+  section h2 {
+    font-size: 1.35rem;
+    margin-bottom: 16px;
+    position: relative;
+    padding-left: 15px;
+  }
+
+  section h2::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 3px; bottom: 3px;
+    width: 3px;
+    background: var(--gold);
+  }
+
+  .about-flex {
+    display: flex;
+    gap: 26px;
+    align-items: flex-start;
+  }
+
+  .about-photo img {
+    width: 191px;
+    height: 191px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid var(--line);
+    display: block;
+  }
+
+  .about-text { flex: 1; min-width: 0; }
+  .about-text p { margin: 0 0 14px; font-size: 0.97rem; }
+  .about-text p:last-child { margin-bottom: 0; }
+
+  .edu-line {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    flex-wrap: wrap;
+  }
+
+  .edu-line .school { color: var(--ink-soft); }
+  .edu-line .years { color: var(--ink-soft); white-space: nowrap; }
+
+  .entry { margin-bottom: 18px; }
+  .entry:last-child { margin-bottom: 0; }
+
+  .entry .row {
+    display: flex; justify-content: space-between; align-items: baseline;
+    flex-wrap: wrap; gap: 3px 14px;
+  }
+
+  .entry .title { font-weight: 600; color: var(--ink); font-size: 0.98rem; }
+  .entry .meta { color: var(--ink-soft); font-size: 0.86rem; white-space: nowrap; }
+  .entry .desc { color: var(--ink-soft); margin-top: 4px; font-size: 0.92rem; }
+  .entry .desc a { font-weight: 500; }
+
+  .skills-block p { font-size: 0.92rem; color: var(--ink-soft); margin: 0 0 8px; }
+  .skills-block p:last-child { margin-bottom: 0; }
+  .skills-block b { color: var(--ink); font-weight: 600; }
+
+  .note {
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--line);
+  }
+
+  .contact-list { list-style: none; padding: 0; margin: 0; }
+  .contact-list li { margin-bottom: 7px; font-size: 0.94rem; }
+  .contact-list span { display: inline-block; width: 90px; color: var(--ink-soft); }
+
+  footer { padding: 26px 0 50px; color: var(--ink-soft); font-size: 0.82rem; }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 1.9rem; }
+    .about-flex { flex-direction: column; align-items: center; text-align: left; }
+    .about-photo img { width: 120px; height: 120px; }
+    .edu-line { flex-direction: column; gap: 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Webpage Profile</div>
+    <h1>Lazizbek Sadullaev</h1>
+    <div class="role">Ph.D. Student in Applied Mathematics, Washington State University</div>
+    <div class="links">
+      <a href="https://github.com/lazizbek-sadullaev" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/lazizbek-sadullaev-a87a1520b" target="_blank">LinkedIn</a>
+      <a href="mailto:lazizbek.sadullaev@wsu.edu">Email</a>
+      <a href="./LS_CV_Aug2026.pdf">CV (PDF)</a>
+    </div>
+  </div>
+</header>
+
+<nav class="subnav">
+  <div class="wrap">
+    <a href="#about">About</a>
+    <a href="#research">Research</a>
+    <a href="#teaching">Teaching</a>
+    <a href="#skills">Skills</a>
+    <a href="#awards">Awards</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about-flex">
+      <div class="about-photo">
+        <img src="./tshirt_5x5_picture.JPG" alt="Photo of Lazizbek Sadullaev">
+      </div>
+      <div class="about-text">
+        <p>
+          I am a Ph.D. candidate in Applied Mathematics at Washington State University. My dissertation focuses on data-driven model discovery and reduced-order modeling of governing differential equations, combining machine learning and optimization. I'm currently on the job market, considering academic (research and teaching), industry, and postdoctoral positions.
+        </p>
+        <div class="edu-line">
+          <span><b>Ph.D. in Applied Mathematics</b> — Washington State University <span class="school">(GPA 3.98/4.0)</span></span>
+          <span class="years">2023 – Present</span>
+        </div>
+        <div class="edu-line">
+          <span><b>M.Sc. in Mathematical Engineering</b> — Urgench State University, Uzbekistan</span>
+          <span class="years">2020 – 2022</span>
+        </div>
+        <div class="edu-line">
+          <span><b>B.Sc. in Applied Mathematics &amp; Informatics</b> — Urgench State University, Uzbekistan</span>
+          <span class="years">2016 – 2020</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="research">
+    <h2>Research &amp; Projects</h2>
+
+    <div class="entry">
+      <div class="row">
+        <span class="title"><a href="https://www.somervillema.gov/HappinessSurvey" target="_blank">Happiness Prediction from Survey Data</a> — Feed-Forward Neural Network</span>
+        <!-- <span class="title">Happiness Prediction from Survey Data — Feed-Forward Neural Network <a> href = "https://www.somervillema.gov/HappinessSurvey"</a></span> -->
+      </div>
+      <div class="desc">
+        Built a cleaning/imputation pipeline for 3,669 survey responses in pandas/NumPy, then implemented a feed-forward neural network from scratch (forward pass, backpropagation, no ML framework). Compared four optimizers across four architectures; best model reached 99.17% test accuracy.
+        <br><a href="https://github.com/lazizbek-sadullaev/wsu-courses/tree/main/Math%20564%20Optimization/projects/project2-ffnn" target="_blank">View on GitHub →</a>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="row">
+        <span class="title">Minimum-Cost Power Transmission Network — Custom QP Solver</span>
+      </div>
+      <div class="desc">
+        Proved convexity/coercivity of a 16-variable quadratic program for routing minimum-loss transmission lines, then wrote a general-purpose QP solver from scratch (LP, unconstrained, KKT, and active-set branches). Validated on a 33-constraint instance, confirming theoretical predictions.
+        <br><a href="https://github.com/lazizbek-sadullaev/wsu-courses/tree/main/Math%20564%20Optimization/projects/project3-min-cost-pipelines-scheme" target="_blank">View on GitHub →</a>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="row">
+        <span class="title">Multi-Scale Method for Ill-Conditioned Linear Systems</span>
+      </div>
+      <div class="desc">
+        Implemented and benchmarked Jacobi, Gauss-Seidel, and a column-scaling multi-scale method; proved a bound on the rescaled system's condition number. Reduced a condition number of 10⁴ to 2.4, letting Gauss-Seidel converge to 10⁻¹² relative error in 6 iterations where the unscaled system stagnated.
+        <br><a href="https://github.com/lazizbek-sadullaev/wsu-courses/tree/main/math%20448%20or%20548/Math%20548%20with%20Prof%20Mano/Final%20Project/math548_final_project.pdf" target="_blank">View writeup →</a>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="row">
+        <span class="title">Talk: On Hamiltonian Monte Carlo for Gaussian Random Variables</span>
+        <span class="meta">IBM T.J. Watson Research Center</span>
+      </div>
+      <div class="desc">
+        Group talk with R. Fernandes, L. Lopes, E. Vazquez.
+        <a href="https://github.com/lazizbek-sadullaev/Conferences_Talks/blob/main/Hamiltonian%20Monte%20Carlo%20for%20GaussianRandom%20Variable_IBM_talk.pdf" target="_blank">Slides →</a>
+      </div>
+    </div>
+
+    <p class="note">More of my dissertation research is on <a href="https://github.com/lazizbek-sadullaev/research" target="_blank">GitHub</a>. Full internship/workshop list in my <a href="./LS_CV_Aug2026.pdf">CV</a>.</p>
+  </section>
+
+  <section id="teaching">
+    <h2>Teaching Experience</h2>
+    <div class="entry">
+      <div class="row">
+        <span class="title">Graduate Teaching Assistant</span>
+        <span class="meta">Jan 2023 – Present</span>
+      </div>
+      <div class="desc">
+        Washington State University — TA for Calculus I &amp; II, Linear Algebra, Probability &amp; Statistics, and Ordinary Differential Equations; ran labs, graded, and held office hours for classes ranging from 20 to 110+ students.
+      </div>
+    </div>
+    <div class="entry">
+      <div class="row">
+        <span class="title">Assistant Teacher of Information Technology</span>
+      </div>
+      <div class="desc">
+        Tashkent State University of Economics — daily programming lessons and competition coaching. Also taught computer science at Millat Umidi University as part-time.
+      </div>
+    </div>
+    <p class="note">Full role-by-role breakdown in my <a href="./LS_CV_Aug2026.pdf">CV</a>.</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-block">
+      <p><b>Languages:</b> Python (NumPy, pandas, SciPy, scikit-learn, Matplotlib), R, SQL, C++, MATLAB</p>
+      <p><b>Methods:</b> Neural networks &amp; backpropagation, convex &amp; quadratic optimization (active-set, KKT, LP), gradient-based optimizers (GD, Momentum, Adam, BFGS), numerical linear algebra, data cleaning &amp; imputation</p>
+      <p><b>Tools:</b> Jupyter, LaTeX, Microsoft Office, Git/GitHub(basics)</p>
+    </div>
+  </section>
+
+  <section id="awards">
+    <h2>Awards &amp; Publications</h2>
+    <div class="entry">
+      <div class="row">
+        <span class="title">AMS–ICM 2026 Graduate Student — NSF #2620718 Travel Grant Recipient</span>
+        <span class="meta">2026</span>
+      </div>
+      <div class="desc">Philadelphia, PA</div>
+    </div>
+    <div class="entry">
+      <div class="row">
+        <span class="title">Academic Excellence Scholarship</span>
+        <span class="meta">2018 – 2020</span>
+      </div>
+      <div class="desc">Awarded for ICPC contest participation and maintaining an outstanding GPA — Urgench State University</div>
+    </div>
+    <div class="entry">
+      <div class="row">
+        <span class="title">Winner, Nationwide Virtual Olympiad</span>
+        <span class="meta">2016</span>
+      </div>
+      <div class="desc">Tashkent, Uzbekistan</div>
+    </div>
+    <div class="entry">
+      <div class="row">
+        <span class="title">Julia and Mandelbrot Sets for Multi-Dimensional Logistic Mapping</span>
+        <span class="meta">2020</span>
+      </div>
+      <div class="desc">Journal of Central Asian Problems</div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <ul class="contact-list">
+      <li><span>WSU Email</span> <a href="mailto:lazizbek.sadullaev@wsu.edu">lazizbek.sadullaev@wsu.edu</a></li>
+      <li><span>Personal</span> <a href="mailto:lazizbek.sadullaev11@gmail.com">lazizbek.sadullaev11@gmail.com</a></li>
+      <li><span>GitHub</span> <a href="https://github.com/lazizbek-sadullaev" target="_blank">github.com/lazizbek-sadullaev</a></li>
+      <li><span>LinkedIn</span> <a href="https://www.linkedin.com/in/lazizbek-sadullaev-a87a1520b" target="_blank">linkedin.com/in/lazizbek-sadullaev</a></li>
+      <li><span>CV</span> <a href="./LS_CV_Aug2026.pdf">Download full CV (PDF)</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">Built for Math 599 — Professional Development, Washington State University.</div>
+</footer>
+
+</body>
+</html>
